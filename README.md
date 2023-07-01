@@ -32,26 +32,25 @@ https://drive.google.com/file/d/1tcCahIbgu6UB8rv0U9J4TBh86-UC_YqE/view?usp=drive
 
 Run Ubuntu as administrator. Create a separate folder for the analysis. Here I am giving the name miRge3_Lib. Move the reference and fastq file to the miRge3_Lib and download the files there using the following script.
 
-mkdir miRge3_Lib
+mkdir miRge3_Lib    # Create a directory named "miRge3_Lib"
 
-conda create --name myenv
+conda create --name myenv     # Create a Conda environment named "myenv"
 
-conda activate myenv
+conda activate myenv     # Activate the Conda environment "myenv"
 
-cd miRge3_Lib
+cd miRge3_Lib     # Change to the "miRge3_Lib" directory
 
-mkdir GSE117031
+mkdir GSE117031  # Create a directory named "GSE117031" inside the "miRge3_Lib" directory
 
-cd GSE117031
+cd GSE117031    # Change to the "GSE117031" directory
 
-sh GSE117031.sh
+sh GSE117031.sh    # Run the shell script named "GSE117031.sh"
 
-cd ..
+cd ..     # Change back to the parent directory
 
-unzip human.zip
+unzip human.zip    # Unzip the "human.zip" file
 
-miRge3.0 -s GSE117031 -db miRBase -lib . -on human -o output_dir -gff -nmir -trf -ai -cpu 4 -a illumina
-
+miRge3.0 -s GSE117031 -db miRBase -lib . -on human -o output_dir -gff -nmir -trf -ai -cpu 4 -a illumina     # Execute the miRge3.0 tool with the specified parameter. To view command-line parameters type miRge3.0 -h
 
 
 
