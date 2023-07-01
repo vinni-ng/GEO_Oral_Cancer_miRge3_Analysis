@@ -32,25 +32,45 @@ https://drive.google.com/file/d/1tcCahIbgu6UB8rv0U9J4TBh86-UC_YqE/view?usp=drive
 
 Run Ubuntu as administrator. Create a separate folder for the analysis. Here I am giving the name miRge3_Lib. Move the reference and fastq file to the miRge3_Lib and download the files there using the following script.
 
-mkdir miRge3_Lib    # Create a directory named "miRge3_Lib"
+#Create a directory named "miRge3_Lib"
 
-conda create --name myenv     # Create a Conda environment named "myenv"
+mkdir miRge3_Lib   
 
-conda activate myenv     # Activate the Conda environment "myenv"
+#Create a Conda environment named "myenv"
 
-cd miRge3_Lib     # Change to the "miRge3_Lib" directory
+conda create --name myenv   
 
-mkdir GSE117031  # Create a directory named "GSE117031" inside the "miRge3_Lib" directory
+#Activate the Conda environment "myenv"
 
-cd GSE117031    # Change to the "GSE117031" directory
+conda activate myenv     
 
-sh GSE117031.sh    # Run the shell script named "GSE117031.sh"
+#Change to the "miRge3_Lib" directory
 
-cd ..     # Change back to the parent directory
+cd miRge3_Lib  
 
-unzip human.zip    # Unzip the "human.zip" file
+#Create a directory named "GSE117031" inside the "miRge3_Lib" directory
 
-miRge3.0 -s GSE117031 -db miRBase -lib . -on human -o output_dir -gff -nmir -trf -ai -cpu 4 -a illumina     # Execute the miRge3.0 tool with the specified parameter. To view command-line parameters type miRge3.0 -h
+mkdir GSE117031  
+
+#Change to the "GSE117031" directory
+
+cd GSE117031
+
+#Run the shell script named "GSE117031.sh"
+
+sh GSE117031.sh  
+
+#Change back to the parent directory
+
+cd ..   
+
+#Unzip the "human.zip" file
+
+unzip human.zip   
+
+#Execute the miRge3.0 tool with the specified parameter. To view command-line parameters type miRge3.0 -h
+
+miRge3.0 -s GSE117031 -db miRBase -lib . -on human -o output_dir -gff -nmir -trf -ai -cpu 4 -a illumina     
 
 
 
