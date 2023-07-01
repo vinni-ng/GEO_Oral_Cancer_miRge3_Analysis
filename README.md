@@ -68,7 +68,7 @@ cd ..
 
 unzip human.zip   
 
-#Execute the miRge3.0 tool with the specified parameter. To view command-line parameters type miRge3.0 -h
+#Execute the miRge3.0 tool with the specified parameter. To view command-line parameters type miRge3.0 -h. The output can be seen in the directory named output_dir
 
 miRge3.0 -s GSE117031 -db miRBase -lib . -on human -o output_dir -gff -nmir -trf -ai -cpu 4 -a illumina     
 
