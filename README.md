@@ -26,19 +26,30 @@ https://drive.google.com/file/d/1oR0rlCz2pf020BG1HIhgvwi9jPagZFwz/view?usp=drive
 
 Reference genome-
 Here the study is on human. So we used the human genome as a reference. A human genome reference sequence is an accepted representation of the human genome sequence that is used by researchers as a standard for comparison to DNA sequences generated in their studies. It can be downloaded directly from the genome browsers like UCSC, NCBI, Ensembl etc. The link to directly download the human reference genome is given below.
+https://drive.google.com/file/d/1tcCahIbgu6UB8rv0U9J4TBh86-UC_YqE/view?usp=drive_link
 
 # Scripts for analysis
 
-Run Ubuntu as administrator. Create a separate folder for the analysis. Here I am giving the name miRge3_Lib. Move the reference and fastq file to the miRge3_Lib and download the files there. unzip the reference genome.
+Run Ubuntu as administrator. Create a separate folder for the analysis. Here I am giving the name miRge3_Lib. Move the reference and fastq file to the miRge3_Lib and download the files there using the following script.
 
 mkdir miRge3_Lib
+
 conda create --name myenv
+
 conda activate myenv
+
 cd miRge3_Lib
+
 mkdir GSE117031
+
 cd GSE117031
+
 sh GSE117031.sh
+
 cd ..
+
+unzip human.zip
+
 miRge3.0 -s GSE117031 -db miRBase -lib . -on human -o output_dir -gff -nmir -trf -ai -cpu 4 -a illumina
 
 
